@@ -14,9 +14,8 @@ The 3D models includes a four capsule first order Ambisonics microphone designed
 
 
 ### Electronics
-dir -> electronic_componnents
-At the moment there is no preamp and capsules that I used dosen not need phantom power. Electronic schematic for them I took from capsules datasheet and added all the neccery parts after that.
+At the moment there is no preamp and capsules that I used dosen not need phantom power. Electronic schematic for them I took from capsules datasheet and added all the neccery parts after that. 
 
 
 ### Calibration
-The calibration/src directory contains the Octave files for the current calibration software. The CALIBRATION.md file in there has a very brief description of usage, but currently is out of date with the current source code. Look into the individual files for more guidance. Hopefully this will be fixed soon.
+The calibration containts 13 codes that need to be run one by one. Some of the may take some time to finish so be pattiont. The code will create folders that are neccery for saving resoults and will save them on your Desktop. to Chnage that edit Paths.txt . Recordings that you made for calibrations goes in the directory rec that will be created after running code 000_setp_create_project_folder_and_Pink_noise.scd
