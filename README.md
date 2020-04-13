@@ -1,4 +1,4 @@
-# mic_calibration_SC
+# Microphone calibration
 
 
 The NAME Project is a collection of 3 3D models for bulding a 1st order ambisonic mic and a collection of SuperColider codes for mic calibration. 
