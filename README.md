@@ -18,4 +18,4 @@ At the moment there is no preamp and capsules that I used dosen not need phantom
 
 
 ### Calibration
-The calibration containts 13 codes that need to be run one by one. Some of the may take some time to finish so be pattiont. The code will create folders that are neccery for saving resoults and will save them on your Desktop. to Chnage that edit Paths.txt . Recordings that you made for calibrations goes in the directory rec that will be created after running code 000_setp_create_project_folder_and_Pink_noise.scd
+The calibration containts 13 codes that need to be run one by one. Some of the may take some time to finish so be pattiont. The code will create folders that are neccery for saving resoults and will save them on your Desktop. to Chnage that edit Paths.txt.
