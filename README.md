@@ -5,6 +5,6 @@ The 3D models are almost completely parametric and are designed to be printed on
 
 
 About building microphones
-Successfully printing a microphone assembly is only the first step in a long and complicated process. This also includes finding and buying the required microphone capsules, assembling the electronics (requires precision skill with the soldering iron) and finally calibrating the multi-capsule microphone to get the best performance out of it (you will need at least a single driver sound source and a calibrated microphone).
+Before you start printing you will need to find and buy the required microphone capsules if you decide to use different ones you need to check if they fit the holder. Assembling the electronics requires soldering skill. For calibration you will need to have skills in supercolider and a sound source and a calibrated microphone for reference.
 
 The whole process is not easy and requires knowledge of acoustics and electronics, plus a healthy dose of patience and the ability to perform tasks with precision and care. This repository will eventually include more detailed instructions, electronic schematics, suggested and tested parts and software and procedures for calibrating and measuring the microphone, including models for test and calibration rigs.
