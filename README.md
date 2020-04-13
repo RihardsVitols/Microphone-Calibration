@@ -22,4 +22,7 @@ The calibration containts 13 codes that need to be run one by one. Some of the m
 
 1. install [SuperColider](https://supercollider.github.io/download)
 2. install a git, I use this [one](https://git-scm.com/download/win)
-3. 
+3. restart your machine
+4. open code named *Quarks-installation.scd* instruction are inside it
+5. open *paths.txt* edit paths if it is neccery. at given moment everything will be created in a folder *MicCalibration* on your Desktop
+6.
