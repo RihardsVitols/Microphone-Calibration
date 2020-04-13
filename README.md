@@ -19,6 +19,10 @@ At the moment there is no preamp and capsules that I used dosen not need phantom
 
 ### Calibration
 The calibration containts 13 codes that need to be run one by one. Some of the may take some time to finish so be pattiont. The code will create folders that are neccery for saving resoults and will save them on your Desktop. to Chnage that edit Paths.txt.
+
 - step 1
 
 install [SuperColider](https://supercollider.github.io/download)
+- step 2
+
+install git I use this [one](https://desktop.github.com/)
