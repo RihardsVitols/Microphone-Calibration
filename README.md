@@ -29,4 +29,4 @@ The calibration containts 13 codes that need to be run one by one. Some of the m
 7. start to run SuperCollider codes starting with *000-....scd* before you move to next one wait the previous one to finish. some of them take time. It will post *DONE* in post window
 
 ### Referneces
-https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/
+[SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
