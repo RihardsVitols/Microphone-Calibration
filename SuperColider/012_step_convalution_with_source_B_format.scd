@@ -8,7 +8,7 @@ var convSynth;
 var correctionKernelsSf;
 var kernelSize, frameSize, correctionKernelPath;
 var headerFormat, sampleFormat, sampleRate, numOutputChannels;
-var destPath, convolvedSempleFolder, sourceRecPath;
+var destPath, convolvedSempleFolder, sourceRecPath, pathsTxtFile;
 
 
 // variables in loop
@@ -24,17 +24,11 @@ numOutputChannels = 4;    // one channel output
 
 
 // all paths used in the code
-destPath  = "~/Desktop/MicCalibration/012_CorrectedSourceBFormat/convSourc".standardizePath; // set the path for the destination of the convolved A format target mic
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+destPath  = pathsTxtFile[28].standardizePath; // set the path for the destination of the convolved A format target mic
 convolvedSempleFolder = PathName.new(destPath);
-sourceRecPath = "~/Desktop/MicCalibration/recordings/diyB.wav".standardizePath;  // path for build mic recording
-correctionKernelPath = PathName.new("~/Desktop/MicCalibration/011_BFormatCorectionFilters".standardizePath); // asigning folder of kernels
-
-
-// // all paths used in the code
-// destPath  = "~/Desktop/IS_RV/MicCalibration/012_CorrectedSourceBFormat/convolved_diy".standardizePath; // set the path for the destination of the convolved A format target mic
-// convolvedSempleFolder = PathName.new(destPath);
-// sourceRecPath = "~/Desktop/IS_RV/MicCalibration/recordings/diy_mic.wav".standardizePath;  // path for build mic recording
-// correctionKernelPath = PathName.new("~/Desktop/IS_RV/MicCalibration/011_BFormatCorectionFilters".standardizePath); // asigning folder of kernels
+sourceRecPath = pathsTxtFile[18].standardizePath;  // path for build mic recording
+correctionKernelPath = PathName.new(pathsTxtFile[29].standardizePath); // asigning folder of kernels
 
 
 ((File.exists(sourceRecPath))&&(File.exists(correctionKernelPath.fullPath))).if({

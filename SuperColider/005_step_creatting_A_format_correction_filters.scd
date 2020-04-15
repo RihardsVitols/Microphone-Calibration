@@ -1,11 +1,11 @@
 (
-///////////////////////////// BUILDS A FORMAT CORRECTION FILLTER LIBRARY /////////////////////////////
+///////////////////////////// BUILDS A FORMAT CORRECTION FILTER LIBRARY /////////////////////////////
 
 
 // variables for calling in the calculation data
 var kernelPath, kernelSf;
 var cmpData, cmpDataPath, correctionData;
-var destPath, correctionKernel, correctionKernelLoop, correctionKernelSignals, correctionKernelFolderPath;
+var destPath, correctionKernel, correctionKernelLoop, correctionKernelSignals, correctionKernelFolderPath, pathsTxtFile;
 var correctionSampleRate, correctionKernelsCollection, correctionkernelSize;
 var numChannels;
 
@@ -16,27 +16,22 @@ var sampleFormat = "float";
 var newKernelSize = 4096;
 var oversample = 2;  // minimum phase oversampling
 
-// ploter variables
-var size = 4096; // auto figure it out sam as line 16??
+// plotter variables
+var size = 4096; // auto figure it out same as line 16??
 var plotArray, plotWindow;
 var hue, numCols, colors;
 var fftMagnitude, fftMagnitudeDb, fftResponse;
 var plotDbMin = -20, plotDbMax = 12;  // auto size
 
-numChannels = 4;    // set the channel nr
+numChannels = 4;    // set the channel count
 
 
 // all the paths in the code
-cmpDataPath = "~/Desktop/MicCalibration/cmp_in_db.txt".standardizePath;
-destPath = "~/Desktop/MicCalibration/005_AFormatCorectionFilters/corfil".standardizePath;
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+cmpDataPath = pathsTxtFile[7].standardizePath;
+destPath = pathsTxtFile[13].standardizePath;
 correctionKernelFolderPath =  PathName.new(destPath);
-kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standardizePath);
-
-// // all the paths in the code
-// cmpDataPath = "~/Desktop/IS_RV/MicCalibration/cmp_in_db.txt".standardizePath;
-// destPath = "~/Desktop/IS_RV/MicCalibration/005_AFormatCorectionFilters/corfil".standardizePath;
-// correctionKernelFolderPath =  PathName.new(destPath);
-// kernelPath = PathName.new("~/Desktop/IS_RV/MicCalibration/001_bandPassFilters".standardizePath);
+kernelPath = PathName.new(pathsTxtFile[4].standardizePath);
 
 
 // create an array for correction
@@ -51,7 +46,7 @@ correctionKernelSignals = Array.new(numChannels);
 
 
 		// message
-		("Folder " ++ correctionKernelFolderPath.folderName ++ " dosn't exists. \nFolder is being created!!").postln;
+		("Folder " ++ correctionKernelFolderPath.folderName ++ " doesn't exists. \nFolder is being created!!").postln;
 
 
 		//creates folder for bandPass kernels
@@ -73,20 +68,20 @@ correctionKernelSignals = Array.new(numChannels);
 	});
 
 	"sampleRate: ".post;
-	correctionSampleRate = kernelSf.at(0).sampleRate.postln; // read sample rate from one of the band pass filters. all of them have the same sample rate
+	correctionSampleRate = kernelSf.at(0).sampleRate.postln; // read sample rate from one of the band pass filters, all of them have the same sample rate
 
 	"kernel size: ".post;
-	correctionkernelSize = kernelSf.at(0).numFrames.postln; // kernel zise for correction filters. all of them have the same size
+	correctionkernelSize = kernelSf.at(0).numFrames.postln; // kernel size for correction filters. all of them have the same size
 
 
-	// creats an array for the correction data. size = band pas filter count
+	// creat an array for the correction data, size = band pas filter count
 	correctionData = Array.new(kernelSf.size * numChannels);
 
 	cmpData = TabFileReader.new(cmpDataPath);// opens the txt file - outside the loop
 
 	correctionData = cmpData.read.at(0).asFloat;
 
-	cmpData.close;  // cleanup. closes the txt file
+	cmpData.close;  // cleanup, closes the txt file
 
 
 	// normalize

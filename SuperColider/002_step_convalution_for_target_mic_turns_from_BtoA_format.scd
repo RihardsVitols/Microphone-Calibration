@@ -1,7 +1,7 @@
-
+(
 //////////////  CONVOLVES TARGET MIC WITH BANDPASS FILTERS  //////////////
 
-(
+
 // variables ...
 var optBconvSynth;
 var filterKernelSf;
@@ -14,7 +14,7 @@ var delPreRecFiles;
 var playBuf, targetRecSf, targetRecPath;
 var channelLoop, kernelLoop;
 var filterKernelBuf, score, breakTime;
-var destPath, destFolderPath;
+var destPath, destFolderPath, pathsTxtFile;
 
 
 // set the NRT vars here...
@@ -24,19 +24,14 @@ numOutputChannels = 4;    // one channel output
 
 
 // all paths used in the code
-destPath  = "~/Desktop/MicCalibration/002_AFormatTargetConvolvedSamples/conv".standardizePath; // set the path for the destination of the convolved semples of reference mic and our own
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+destPath = pathsTxtFile[2].standardizePath;
 destFolderPath = PathName.new(destPath);
-targetRecPath = "~/Desktop/MicCalibration/recordings/ambeo_B_format.wav".standardizePath;  // path for your source mic B format recording
-kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standardizePath); // asigning folder of kernels
-
-// // all paths used in the code
-// destPath  = "~/Desktop/IS_RV/MicCalibration/002_AFormatTargetConvolvedSamples/conv".standardizePath; // set the path for the destination of the convolved semples of reference mic and our own
-// destFolderPath = PathName.new(destPath);
-// targetRecPath = "~/Desktop/IS_RV/MicCalibration/recordings/ambeo_B_format.wav".standardizePath;  // path for your source mic B format recording
-// kernelPath = PathName.new("~/Desktop/IS_RV/MicCalibration/001_bandPassFilters".standardizePath); // asigning folder of kernels
+targetRecPath = pathsTxtFile[3].standardizePath;  // path for your source mic B format recording
+kernelPath = PathName.new(pathsTxtFile[4].standardizePath); // asigning folder of kernels
 
 
-// if recorded target sample dosn't exists prints line and ands the code
+// if recorded target sample dose not exists prints line and ands the code
 ((File.exists(targetRecPath))&&(File.exists(kernelPath.fullPath))).if({
 
 
@@ -46,7 +41,7 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 		("Folder " ++ destFolderPath.folderName ++ " doesn't exist. \nFolder is being created!!").postln; // message
 
 
-		//creates folder for convolved semple kernels
+		//creates folder for convolved sample kernels
 		try({
 
 			destFolderPath.pathOnly.mkdir
@@ -84,8 +79,8 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 		var inA;  // a-format
 		var out, bus;
 		var numChannes;
-		var orientation = \flu;  // this should match the diy mic
-		var weight = \car; // this should match the diy mic
+		var orientation = \flu;  // this should match the target mic
+		var weight = \car; // this should match the target mic
 
 
 		// default vals
@@ -110,7 +105,7 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 	});
 
 
-	// set up recorded sound file instancet
+	// set up recorded sound file instance
 	targetRecSf = SoundFile.openRead(targetRecPath);
 
 
@@ -140,11 +135,11 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 			("\nconvolving with " + kernelNr + " kernel out of " + filterKernelSf.size).postln;
 
 
-			//create a score. each loop creats a new score
+			//create a score, each loop creat a new score
 			score = CtkScore.new;
 
 
-			// create (read in) recorded pink noise. one chanele once at a time
+			// create (read in) recorded pink noise, one channel once at a time
 			playBuf = CtkBuffer.new(
 				path: targetRecSf.path,         // path set above
 				startFrame: 0,                   // start from beginning
@@ -170,7 +165,7 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 			//get Kernel size for Convolution
 			kernelSize = filterKernelSf[kernelNr].numFrames;
 			frameSize = kernelSize.nextPowerOfTwo;      // get FFT frameSize as >= pow2
-			sampleRate = filterKernelSf[kernelNr].sampleRate;  // sample rate for the convolved soundfile
+			sampleRate = filterKernelSf[kernelNr].sampleRate;  // sample rate for the convolved sound file
 
 
 

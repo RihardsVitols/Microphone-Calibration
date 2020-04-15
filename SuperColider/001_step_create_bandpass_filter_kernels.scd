@@ -9,30 +9,27 @@ var headerFormat = "WAV";
 var sampleFormat = "float";
 
 
-// ploter variables
+// plotter variables
 var plotArray, plotWindow;
 var hue, numCols, colors;
 var plotDbMin = -60, plotDbMax = 5;
 
 
 // the kernels variables
-var kernels, destPath, kernelFolderPath;
+var kernels, destPath, kernelFolderPath, pathsTxtFile;
 var kernel, fftResponse, fftMagnitude, fftMagnitudeDb;
 
 
-// Octave calculcation variables
+// Octave calculation variables
 var upFreq, lowFreq, calculateFreqRatio, alpha;
 var numOfDivisions, numOfOctaves, subFreqs, subFreqArraySize;
 var delPreRecFiles;
 
 
 // paths
-destPath = "~/Desktop/MicCalibration/001_bandPassFilters/bandPass".standardizePath; // path where all the kernels will be writen
+pathsTxtFile = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+destPath = pathsTxtFile[1].standardizePath;
 kernelFolderPath = PathName.new(destPath);
-
-// // paths
-// destPath = "~/Desktop/IS_RV/MicCalibration/001_bandPassFilters/bandPass".standardizePath; // path where all the kernels will be writen
-// kernelFolderPath = PathName.new(destPath);
 
 
 // set number of octaves
@@ -40,7 +37,7 @@ numOfDivisions = 10;
 numOfOctaves = 12;
 
 
-// filter s variables 10 max value giving a sharp resoult
+// filter s variables 10 max value giving a sharp result
 // alpha = 1.0;  // ideal - use this
 // alpha = 0.1;  // smooth - or, use this...
 alpha = 2.sqrt.reciprocal;
@@ -126,7 +123,7 @@ plotArray = kernels.collect({ arg kernel, i;
 	);
 
 
-	// find (& trim magnitude)
+	// find & trim magnitude
 	fftMagnitude = fftResponse.magnitude;
 	fftMagnitude = fftMagnitude.copyFromStart((size/2).asInteger);
 	fftMagnitudeDb = fftMagnitude.ampdb;

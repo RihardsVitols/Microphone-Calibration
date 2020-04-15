@@ -2,8 +2,8 @@
 ///////////////////////////// CONVOLVED SOURCE MIC CONVERSION TO B-FORMAT /////////////////////////////
 
 
-// varaibles ...
-var sourcePath, kernelPath, destPath, destFolderPath, delPreRecFiles;
+// variables ...
+var sourcePath, kernelPath, destPath, destFolderPath, delPreRecFiles, pathsTxtFile;
 var score, playBuf, sourceSf;
 var filterKernelSf, kernelLoop, filterKernelBuf, kernelSize;
 var sourceAtoBSynth, sampleRate, numbFrames, frameSize;
@@ -16,19 +16,16 @@ var numOutputChannels = 4;    // one channel output
 
 
 // Paths
-sourcePath = "~/Desktop/MicCalibration/006_CorrectedSourceAFormat/convSourc.wav".standardizePath;  // path to recording taht we want to oconvert
-destPath = "~/Desktop/MicCalibration/recordings/diyB.wav".standardizePath;  // place where the B format file will be saved
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+sourcePath = pathsTxtFile[16].standardizePath;  // path to the recording that we want to convert
+destPath = pathsTxtFile[17].standardizePath;  // place where the B format file will be saved
 destFolderPath = PathName.new(destPath);
-//
-// sourcePath = "~/Desktop/IS_RV/MicCalibration/006_CorrectedSourceAFormat/convSourc.wav".standardizePath;  // path to recording taht we want to oconvert
-// destPath = "~/Desktop/IS_RV/MicCalibration/recordings/diyB.wav".standardizePath;  // place where the B format file will be saved
-// destFolderPath = PathName.new(destPath);
 
 
 	"\n ------CONVERTING SOURCE A TO B FORMAT------ \n".postln;
 
 
-	// The goal here is to take the diy (aka source) mic recording
+	// The goal here is to take the target mic recording
 	//
 	// 1) convert to B-format
 	sourceAtoBSynth = CtkSynthDef(\AtoB_conv, { arg playBuf, frameSize, filterKernelBuf;
@@ -39,7 +36,7 @@ destFolderPath = PathName.new(destPath);
 		var weight = \car; // this should match the diy mic
 
 
-		// default vals
+		// default values
 		numChannes = 4;  // input playBuf channels: four - because it is A-format
 		bus = 0;    // write out bus number
 
@@ -71,7 +68,7 @@ destFolderPath = PathName.new(destPath);
 	fork {
 
 
-			//create a score. each loop creats a new score
+			//create a score, each loop create a new score
 			score = CtkScore.new;
 
 

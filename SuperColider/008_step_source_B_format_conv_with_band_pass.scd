@@ -15,7 +15,7 @@ var delPreRecFiles;
 var playBuf;
 var channelLoop, kernelLoop;
 var filterKernelBuf, score, breakTime;
-var destPath, destFolderPath;
+var destPath, destFolderPath, pathsTxtFile;
 
 
 // set the NRT vars here...
@@ -25,30 +25,24 @@ numOutputChannels = 4;    // one channel output
 
 
 // all paths used in the code
-destPath  = "~/Desktop/MicCalibration/008_BFormatSourceConvolvedSamples/BSourceConv".standardizePath; // set the path for the destination of the convolved semples of reference mic and our own
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+destPath  = pathsTxtFile[19].standardizePath; // set the path for the destination of the convolved semples of reference mic and our own
 destFolderPath = PathName.new(destPath);
-sourceRecPath = "~/Desktop/MicCalibration/recordings/diyB.wav".standardizePath;  // path for build mic recording
-kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standardizePath); // asigning folder of kernels
+sourceRecPath = pathsTxtFile[18].standardizePath;  // path for build mic recording
+kernelPath = PathName.new(pathsTxtFile[4].standardizePath); // asigning folder of kernels
 
 
-// // all paths used in the code
-// destPath  = "~/Desktop/IS_RV/MicCalibration//008_BFormatSourceConvolvedSamples/BSourceConv".standardizePath; // set the path for the destination of the convolved semples of reference mic and our own
-// destFolderPath = PathName.new(destPath);
-// sourceRecPath = "~/Desktop/IS_RV/MicCalibration/recordings/diyB.wav".standardizePath;  // path for build mic recording
-// kernelPath = PathName.new("~/Desktop/IS_RV/MicCalibration/001_bandPassFilters".standardizePath); // asigning folder of kernels
-
-
-// if recorded target sample dosn't exists prints line and ands the code
+// if recorded target sample doesn't exist print line and end the code
 ((File.exists(sourceRecPath))&&(File.exists(kernelPath.fullPath))).if({
 
 
-	// creating folder if it dosn't exist and deleting convovled audio files that will be created by the end of this code
+	// creating folder if it doesn't exist and deleting convovled audio files that will be created by the end of this code
 	File.exists(destFolderPath.pathOnly).not.if({
 
 		("Folder " ++ destFolderPath.folderName ++ " doesn't exists. \nFolder is being created!!").postln; // message
 
 
-		//creates folder for convolved semple kernels
+		//creates folder for convolved sample kernels
 		try({
 
 			destFolderPath.pathOnly.mkdir
@@ -83,7 +77,7 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 		var numChannes;
 
 
-		// default vals
+		// default values
 		numChannes = 4;  // input playBuf channels: four
 		bus = 0;
 
@@ -100,7 +94,7 @@ kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standar
 	});
 
 
-	// set up recorded sound file instancet
+	// set up recorded sound file instance
 	sourceRecSf = SoundFile.openRead(sourceRecPath);
 
 

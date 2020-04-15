@@ -4,7 +4,7 @@
 
 // variables for calling in the calculation data
 var kernelPath, kernelSf;
-var cmpData, cmpDataPath, correctionData;
+var cmpData, cmpDataPath, correctionData, pathsTxtFile;
 var destPath, correctionKernel, correctionKernelLoop, correctionKernelSignals, correctionKernelFolderPath;
 var correctionSampleRate, correctionKernelsCollection, correctionkernelSize;
 var numChannels;
@@ -25,18 +25,12 @@ var plotDbMin = -20, plotDbMax = 12;  // auto size
 
 numChannels = 4;    // set the channel nr
 
-
 // all the paths in the code
-cmpDataPath = "~/Desktop/MicCalibration/BFormat_cmp_in_db.txt".standardizePath;
-kernelPath = PathName.new("~/Desktop/MicCalibration/001_bandPassFilters".standardizePath);
-destPath = "~/Desktop/MicCalibration/011_BFormatCorectionFilters/Bcorfil".standardizePath;
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+cmpDataPath = pathsTxtFile[21].standardizePath;
+kernelPath = PathName.new(pathsTxtFile[4].standardizePath);
+destPath = pathsTxtFile[27].standardizePath;
 correctionKernelFolderPath =  PathName.new(destPath);
-
-// // all the paths in the code
-// cmpDataPath = "~/Desktop/IS_RV/MicCalibration/BFormat_cmp_in_db.txt".standardizePath;
-// destPath = "~/Desktop/IS_RV/MicCalibration/011_BFormatCorectionFilters/Bcorfil".standardizePath;
-// correctionKernelFolderPath =  PathName.new(destPath);
-// kernelPath = PathName.new("~/Desktop/IS_RV/MicCalibration/001_bandPassFilters".standardizePath);
 
 
 // create an array for correction

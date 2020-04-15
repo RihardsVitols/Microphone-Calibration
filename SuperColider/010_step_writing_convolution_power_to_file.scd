@@ -10,26 +10,18 @@ var numChannels, numSemples;
 var sourcDataCollection, targetDataCollection;
 var cmp, cmpPath, cmpFile, cmpHumanPath, cmpHumanFile;
 var sourcPath, sourcFile, targetPath, targetFile;
-var sourcConvLoop, targetConvLoop, sourcConvPath, targetConvPath;
+var sourcConvLoop, targetConvLoop, sourcConvPath, targetConvPath, pathsTxtFile;
 
 
 // all the paths in the code
-cmpPath = "~/Desktop/MicCalibration/BFormat_cmp_in_db.txt".standardizePath;
-targetPath = "~/Desktop/MicCalibration/BFormat_target_power.txt".standardizePath;
-targetConvPath = "~/Desktop/MicCalibration/009_BFormatTargetConvolvedSamples".standardizePath;
+pathsTxtFile  = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+cmpPath = pathsTxtFile[21].standardizePath;
+targetPath = pathsTxtFile[22].standardizePath;
+targetConvPath = pathsTxtFile[23].standardizePath;
 
-sourcPath = "~/Desktop/MicCalibration/BFormat_sourc_power.txt".standardizePath;
-cmpHumanPath = "~/Desktop/MicCalibration/BFormat_cmp_human_readable.txt".standardizePath;
-sourcConvPath = "~/Desktop/MicCalibration/008_BFormatSourceConvolvedSamples".standardizePath;
-
-// // all the paths in the code
-// cmpPath = "~/Desktop/IS_RV/MicCalibration/BFormat_cmp_in_db.txt".standardizePath;
-// targetPath = "~/Desktop/IS_RV/MicCalibration/BFormat_target_power.txt".standardizePath;
-// targetConvPath = "~/Desktop/IS_RV/MicCalibration/009_BFormatTargetConvolvedSamples".standardizePath;
-//
-// sourcPath = "~/Desktop/IS_RV/MicCalibration/BFormat_sourc_power.txt".standardizePath;
-// cmpHumanPath = "~/Desktop/IS_RV/MicCalibration/BFormat_cmp_human_readable.txt".standardizePath;
-// sourcConvPath = "~/Desktop/IS_RV/MicCalibration/008_BFormatSourceConvolvedSamples".standardizePath;
+sourcPath = pathsTxtFile[24].standardizePath;
+cmpHumanPath = pathsTxtFile[25].standardizePath;
+sourcConvPath = pathsTxtFile[26].standardizePath;
 
 
 // creating loop size

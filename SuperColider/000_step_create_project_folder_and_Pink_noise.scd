@@ -4,24 +4,21 @@
 
 // variables
 var projectFolder;
-var score, note, synthDef, destPath, breakTime;
+var score, note, synthDef, destPath, breakTime, pathsTxtFile;
 var headerFormat, sampleFormat, sampleRate, numOutputChannels;
 
 
 // set the NRT vars here...
-headerFormat = "WAV";    // soundfile header format
-sampleFormat = "int24";   // soundfile sample format
+headerFormat = "WAV";    // sound file header format
+sampleFormat = "int24";   // sound file sample format
 sampleRate = 44100;   // sample rate
 numOutputChannels = 24;   // 24 channels for an ambisonic recording
 
 
 // path
-destPath = "~/Desktop/MicCalibration/recordings/Pink_nois_24ch.wav".standardizePath; // output
+pathsTxtFile = "D:/TECHNOLOGY/Ambisonic_MIC/SuperColider/paths.txt".load; // path to the paths.txt file
+destPath = pathsTxtFile[0].standardizePath;
 projectFolder = PathName.new(destPath);
-
-// destPath = "~/Desktop/IS_RV/MicCalibration/recordings/Pink_nois_24ch.wav".standardizePath; // output
-// projectFolder = PathName.new(destPath);
-
 
 
 // creates a project folder on your Desktop
@@ -46,7 +43,7 @@ File.exists(projectFolder.fullPath).not.if({
 });
 
 
-// condition to do a break between each score writting
+// condition to do a break between each score writing
 breakTime  =  Condition();
 
 fork {
@@ -56,19 +53,19 @@ fork {
 	score = CtkScore.new;
 
 
-	// synth that creats pink noise
+	// synth that creat pink noise
 	synthDef = CtkSynthDef.new(\pink, {
 
 		arg gain, dur, ris = 0.5, dec = 0.5;
 		var sig, env, amp, envGen;
 
-		amp = gain.dbamp;   // turn gain in to db amplitude
+		amp = gain.dbamp;   // turn gain in to the db amplitude
 
-		env = Env.new([0, 1, 1, 0], [ris, dur - (dec + ris), dec]);   // envelope for begining and end of the sound file
+		env = Env.new([0, 1, 1, 0], [ris, dur - (dec + ris), dec]);   // envelope for beginning and end of the sound file
 
 		envGen = EnvGen.kr(env, levelScale: amp, timeScale: 1);
 
-		sig = {PinkNoise.ar(envGen)}!24;   // sets 24 indipendent Pink noise generators and spreds them out trough 24 chanenls
+		sig = {PinkNoise.ar(envGen)}!24;   // sets 24 independent Pink noise generators and spreds them out trough 24 channels
 
 		Out.ar(0, sig);    // outputs signal to speakers
 	});
