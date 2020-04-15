@@ -26,7 +26,11 @@ The calibration containts 13 codes that need to be run one by one. Some of the m
 4. open code named *Quarks-installation.scd* instruction are inside it
 5. go to [ATK home page](http://www.ambisonictoolkit.net/download/supercollider/) and install plugins, reopen SuperCollider
 6. open *paths.txt* edit paths if it is neccery. At given moment everything will be created in a folder *MicCalibration* on your Desktop
-7. start to run SuperCollider codes starting with *000-....scd* before you move to next one wait the previous one to finish. some of them take time. It will post *DONE* in post window
+7. start to run SuperCollider codes starting with *000-....scd*. This creates a Pink noise recording in a folder *Desktop/MicCalibration/recordings*
+8. Use the pink noise recording to do 2 recordings in a lab setting. One with a reference micrephone and second one with target micrephone (one you bild). Make sure that both micrephones are place in exectly the same place and uses same settings when you do the recordings.
+9. Convert reference microphone recording to B format trough its softwear.
+10. Put both recodrings in the folder *Desktop/MicCalibration/recordings* then open *paths.txt* and in the lines 5, 8 edit their names.
+11. Now you can move one to code *001_....scd*. Some of the codes will take some time to process their tasks.
 
 ### Referneces
 [SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
