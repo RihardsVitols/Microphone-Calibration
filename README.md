@@ -11,7 +11,7 @@ Before you start printing you will need to find and buy the required microphone 
 
 
 ### 3D models
-The 3D models includes a four capsule first order Ambisonics microphone designed by Rihards Vitols. The models will be expanded as testing proceeds.
+The 3D models includes a four capsule first order Ambisonics microphone and a adapter for a microphone holder designed by Rihards Vitols. The models will be expanded as testing proceeds.
 
 
 ### Electronics
