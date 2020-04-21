@@ -11,6 +11,7 @@ parts:
 - 4 680 ohm resistors
 - 4 1 μF capacitors
 - 3.3V battery
+- on off toggle switch
 - battery holder
 
 equipment:
