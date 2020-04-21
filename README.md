@@ -47,7 +47,7 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 7. start to run SuperCollider codes starting with *000-....scd*. This creates a Pink noise recording in a folder *Desktop/MicCalibration/recordings*
 8. Use the pink noise recording to do 2 recordings in a lab setting. One with a reference microphone and second with a target microphone (one you build). Make sure that both microphones are placed in exactly the same place and use the same settings when you do the recordings.
 9. Convert reference microphone recording to B format through its softwear.
-10. Put both recodrings in the folder *Desktop/MicCalibration/recordings* then open *paths.txt* and in the lines 5, 8 after *.../recordings/...* change to your file names.
+10. Put both recordings in the folder *Desktop/MicCalibration/recordings* then open *paths.txt* and in the lines 5, 8 after *.../recordings/...* change to your file names.
 11. Now you can move one to code *001_....scd*. Some of the codes will take some time to process their tasks.
 
 ### Referneces
