@@ -19,11 +19,11 @@ equipment:
 - 4 channel audio recorder, [I am using](https://www.zoom-na.com/products/field-video-recording/field-recording/zoom-f4-multitrack-field-recorder)
 - speaker array in a full spherical layout
 
-software
+software:
 - SuperCollider
 - [Reaper](https://www.reaper.fm/download.php)
 
-known issues
+known issues:
 - Panasonic WM-55A103 very quiet
 - high noise level
 
