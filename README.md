@@ -1,8 +1,6 @@
 # Microphone calibration
-
-
-The NAME Project is a collection of 4 3D models for bulding a 1st order ambisonic mic and a collection of SuperColider codes for mic calibration. 
-The 3D models are almost completely parametric and are designed to be printed on a resin 3D printer. I used Formlabs 2. Mic consists out of 3 parts - body, electronics cover and mesh screen.
+The NAME Project is a collection of 4 3D models for bulding a 1st order ambisonic mic and a collection of [SuperColider](https://supercollider.github.io/) codes for mic calibration. 
+The 3D models are almost completely parametric and are designed to be printed on a resin 3D printer. I used [Formlabs 2](https://formlabs.com/3d-printers/form-2/). Mic consists out of 3 parts - body, electronics cover and mesh screen.
 
 ### Overwie
 parts:
@@ -14,6 +12,14 @@ parts:
 - 4 1 μF capacitors
 - 3.3V battery
 - battery holder
+
+equipment:
+- 3D printer
+- Ambisonic microphone, [I am using](https://en-us.sennheiser.com/microphone-3d-audio-ambeo-vr-mic)
+- 4 channel audio recorder, [I am using](https://www.zoom-na.com/products/field-video-recording/field-recording/zoom-f4-multitrack-field-recorder)
+- speaker array in a full spherical layout
+
+Sooftwear
 
 ### About building microphone
 Before you start printing you will need to find and buy the required microphone capsules if you decide to use different ones you need to check if they fit the holder. Assembling the electronics requires soldering skill. For calibration you will need to have skills in supercolider and a sound source and a calibrated microphone for reference. The whole process takes around 14h ( including printing and recording ) some patience and the ability to perform tasks with precision and care.
