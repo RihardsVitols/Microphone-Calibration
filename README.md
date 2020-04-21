@@ -52,3 +52,9 @@ The calibration containts 13 codes that need to be run one by one. Some of the m
 
 ### Referneces
 [SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
+
+### Acknowledgmen
+[DxArts](https://dxarts.washington.edu/)
+Joseph Anderson
+Michael McCrea
+Marcin Pączkowski
