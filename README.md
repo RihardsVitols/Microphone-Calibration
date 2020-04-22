@@ -56,7 +56,8 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 11. Now you can move one to code *001_....scd*. Some of the codes will take some time to process their tasks.
 
 ### Referneces
-[SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
+- [SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
+- [Calibration Approaches for HOA Microphone Arrays](https://www.researchgate.net/publication/338801738_Calibration_Approaches_for_HOA_Microphone_Arrays_Paper)
 
 ### Acknowledgmen
 - [DxArts](https://dxarts.washington.edu/)
