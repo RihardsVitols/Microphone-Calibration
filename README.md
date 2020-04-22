@@ -24,7 +24,7 @@ software:
 - SuperCollider
 - [Reaper](https://www.reaper.fm/download.php)
 
-known issues:
+place for improvement:
 - Panasonic WM-55A103 very quiet
 - high noise level
 
