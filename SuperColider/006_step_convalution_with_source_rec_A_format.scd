@@ -1,8 +1,7 @@
-
+(
 ///////////////////////// SOURCE MIC A FORMAT CONVOLUTION WITH CORRECTION FILTERS ////////////////////////
 
 
-(
 // variables ...
 var convSynth;
 var correctionKernelsSf;
