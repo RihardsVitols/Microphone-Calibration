@@ -65,3 +65,6 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 - [Joseph Anderson](https://dxarts.washington.edu/people/joseph-anderson)
 - Michael McCrea
 - Marcin Pączkowski
+
+### License
+-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
