@@ -1,6 +1,6 @@
 # Microphone calibration
-The NAME Project is a collection of 4 3D models for building a 1st order ambisonic mic and a collection of [SuperCollider](https://supercollider.github.io/) codes for mic calibration. 
-The 3D models are almost completely parametric and are designed to be printed on a resin 3D printer. I used [Formlabs 2](https://formlabs.com/3d-printers/form-2/). Mic consists of 4 parts - body, electronics cover, mesh screen and an adapter clamp for a microphone holder.
+The NAME Project goal is to make a low cost ambisonic microphone. This repository contains 4 3D models for building a 1st order ambisonic mic and a collection of [SuperCollider](https://supercollider.github.io/) codes for microphone calibration. 
+The 3D models are designed to be printed on a resin 3D printer. I used [Formlabs 2](https://formlabs.com/3d-printers/form-2/). Microphone consists of 4 parts - body, electronics cover, mesh screen and an adapter clamp for a microphone holder. Resoult folder contains recordings and images of calibartion that I did for testing codes.
 
 ### Overview
 parts:
