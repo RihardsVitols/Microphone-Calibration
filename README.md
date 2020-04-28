@@ -58,6 +58,7 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 ### Referneces
 - [SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
 - [Calibration Approaches for HOA Microphone Arrays](https://www.researchgate.net/publication/338801738_Calibration_Approaches_for_HOA_Microphone_Arrays_Paper)
+- [Calibration of Soundfield Microphones Using the Diffuse-Field Response](https://secure.aes.org/forum/pubs/conventions/?elib=16453)
 
 ### Acknowledgmen
 - [DxArts](https://dxarts.washington.edu/)
