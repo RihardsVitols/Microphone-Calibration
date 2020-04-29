@@ -65,5 +65,5 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 ### Acknowledgment
 - [DxArts](https://dxarts.washington.edu/)
 - [Joseph Anderson](https://dxarts.washington.edu/people/joseph-anderson)
-- Michael McCrea
+- [Michael McCrea](https://github.com/mtmccrea)
 - [Marcin Pączkowski](http://marcinpaczkowski.com/)
