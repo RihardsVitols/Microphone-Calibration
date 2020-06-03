@@ -2,8 +2,6 @@
 The NAME Project goal is to make a low cost ambisonic microphone. This repository contains 4 3D models for building a 1st order ambisonic mic and a collection of [SuperCollider](https://supercollider.github.io/) codes for microphone calibration. 
 The 3D models are designed to be printed on a resin 3D printer. I used [Formlabs 2](https://formlabs.com/3d-printers/form-2/). Microphone consists of 4 parts - body, electronics cover, mesh screen and an adapter clamp for a microphone holder. Resoult folder contains recordings and images of calibartion that I did for testing codes.
 
-This project is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode)
-
 ### Overview
 parts:
 - 4 Unidirectional microphone capsules. I used this ones [Panasonic WM-55A103](https://media.digikey.com/pdf/Data%20Sheets/Panasonic%20Electronic%20Components/WM-55A103.pdf)
