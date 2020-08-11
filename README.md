@@ -56,6 +56,12 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 10. Put both recordings in the folder *Desktop/MicCalibration/recordings* then open *paths.txt* and in the lines 5, 8 after *.../recordings/...* change to your file names.
 11. Now you can move one to code *001_....scd*. Some of the codes will take some time to process their tasks.
 
+## Impulse Calibration
+This allowes you to run calibration process with out doing a recording of a reference microphone. We create 4 impulses 1 for each channel and then run them trough chosen A to B decoder. That will create us filters that we use in SuperCollider to calibrate your microphone. Don't forget that SuperCollider code paths are correct. I have added once from Senhiser if you are using those you can skip first N steps.
+
+1. 
+
+
 ### Referneces
 - [SpHEAR project](https://cm-gitlab.stanford.edu/ambisonics/SpHEAR/)
 - [Calibration Approaches for HOA Microphone Arrays](https://www.researchgate.net/publication/338801738_Calibration_Approaches_for_HOA_Microphone_Arrays_Paper)
