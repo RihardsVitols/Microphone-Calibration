@@ -1,5 +1,5 @@
 # Microphone calibration
-The NAME Project goal is to make a low cost ambisonic microphone. This repository contains 4 3D models for building a 1st order ambisonic mic and a collection of [SuperCollider](https://supercollider.github.io/) codes for microphone calibration. 
+The SLI Project goal is to make a low cost ambisonic microphone. This repository contains 4 3D models for building a 1st order ambisonic mic and a collection of [SuperCollider](https://supercollider.github.io/) codes for microphone calibration. 
 The 3D models are designed to be printed on a resin 3D printer. I used [Formlabs 2](https://formlabs.com/3d-printers/form-2/). Microphone consists of 4 parts - body, electronics cover, mesh screen and an adapter clamp for a microphone holder. Resoult folder contains recordings and images of calibartion that I did for testing codes.
 
 ### Overview
@@ -27,6 +27,7 @@ software:
 
 place for improvement:
 - Panasonic WM-55A103 high noise level
+- still dealing with grounding issues 
 
 ### About building microphone
 Before you start printing you will need to find and buy the required microphone capsules if you decide to use different ones you need to check if they fit the holder. Assembling the electronics requires soldering skill. For calibration you will need to have skills in SuperCollider and a sound source and a calibrated microphone for reference. The whole process takes around 14h ( including printing and recording ) some patience and the ability to perform tasks with precision and care.
