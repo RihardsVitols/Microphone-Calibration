@@ -57,9 +57,12 @@ The calibration contains 13 codes that need to be run one by one. Some of them m
 11. Now you can move one to code *001_....scd*. Some of the codes will take some time to process their tasks.
 
 ## Impulse Calibration
-This allowes you to run calibration process with out doing a recording of a reference microphone. We create 4 impulses 1 for each channel and then run them trough chosen A to B decoder. That will create us filters that we use in SuperCollider to calibrate your microphone. Don't forget that SuperCollider code paths are correct. I have added once from Senhiser if you are using those you can skip first N steps.
+This allows you to run calibration process without doing a recording of a reference microphone. We create 4 impulses 1 for each channel and then run them trough chosen A to B decoder. That will create us filters that we use in SuperCollider to calibrate your microphone. Don't forget to check that paths in the SuperCollider code are correct. I have added once from Senhiser if you are using those you can skip first 2 steps.
 
-1. 
+1. first run the code named createImpulses.scd, it will create 4 sound files
+2. created sound files needs to be converted from A to B format using converting software of your choice. I used Senhiser ambio plugin for Reaper software
+3. open SuperCollider code named convertAtoBWithImpulseFilters.scd. Check that all the paths are correct and run it
+4. enjoy your result
 
 
 ### Referneces
